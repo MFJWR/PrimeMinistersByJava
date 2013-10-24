@@ -5,6 +5,12 @@ package primeministers;
  */
 public class Attributes extends Object
 {
+	
+	
+	
+	
+	
+	
 	/**
 	 * ここを作成してください。
 	 * まず、次のページを参照しながら、スケルトン（スタブ）を作ることから始めましょう。
