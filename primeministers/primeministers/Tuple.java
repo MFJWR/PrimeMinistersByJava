@@ -23,7 +23,11 @@ public class Tuple extends Object
 	public java.util.ArrayList<java.awt.image.BufferdImage> images(){}
 	private java.awt.image.BufferedImage picture(java.lang.String aString){}
 	public java.util.ArrayList<java.awt.image.BufferedImage> thumbnails(){}
+<<<<<<< HEAD
 	public java.lang.String toString(){return "b";}
+=======
+	public java.lang.String toString(){return "a";}
+>>>>>>> 03f32e890fdc76640af97ed959a27954754a5b64
 	public java.util.ArrayList<Tuple> tuples(){}
 	
 }
