@@ -12,8 +12,10 @@ public class Downloader extends IO
 	 */
 	//フィールド//
 	private java.lang.String url;
+	
 	//コンストラクタ//
 	public Downloader(){}
+	
 	//メソッド//
 	public void downloadCSV(){}
 	public void downloadImages(){}
