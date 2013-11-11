@@ -10,21 +10,18 @@ public class Tuple extends Object
 	 * まず、次のページを参照しながら、スケルトン（スタブ）を作ることから始めましょう。
 	 * http://www.cc.kyoto-su.ac.jp/~atsushi/Programs/CSV2HTML/PrimeMinistersJavaDoc/index.html
 	 */
+	//フィールド//
 	private Attributes attributes;
-	private java.util.ArrayList<Tuple> tuples;
-	private java.util.ArrayList<java.awt.image.BufferedImage> images;
-	private java.util.ArrayList<java.awt.image.BufferedImage> thumbnails;	
+	private java.util.ArrayList<java.lang.String> values;
 	
-	public Table(){}
+	//コンストラクタ//
+	public Tuple(Attributes instanceOfAttributes,java.util.ArrayList<java.lang.String> valuesCollection){}
 	
-	public void add(Tuple aTuple){}
+	//メソッド//
 	public Attributes attributes(){}
-	public void attributes(Attributes instanceOfAttributes){}
-	public java.util.ArrayList<java.awt.image.BufferdImage> images(){}
-	private java.awt.image.BufferedImage picture(java.lang.String aString){}
-	public java.util.ArrayList<java.awt.image.BufferedImage> thumbnails(){}
-	public java.lang.String toString(){}
-
-	public java.util.ArrayList<Tuple> tuples(){}
+	public java.lang.String toString(){
+	//Overrides:toString in class java.lang.Object
+	}
+	public java.util.ArrayList<java.lang.String> values(){}
 	
 }
