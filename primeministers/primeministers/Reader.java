@@ -10,4 +10,17 @@ public class Reader extends IO
 	 * まず、次のページを参照しながら、スケルトン（スタブ）を作ることから始めましょう。
 	 * http://www.cc.kyoto-su.ac.jp/~atsushi/Programs/CSV2HTML/PrimeMinistersJavaDoc/index.html
 	 */
+	
+	//テーブル//
+	private java.io.File filename;
+	
+	//コンストラクタ//
+	public Reader(){}
+	
+	//メソッド//
+	public static java.io.File filenameOfCSV(){}
+	public java.io.File filename(){}
+	public Table table(){
+	//Overrides: table in class IO
+	}
 }
