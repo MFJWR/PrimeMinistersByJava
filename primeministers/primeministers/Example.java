@@ -5,6 +5,9 @@ package primeministers;
  */
 public class Example extends Object
 {
+	//コンストラクタ
+	public Example(){}
+	
 	/**
 	 * サンプルのメインプログラム。
 	 */
