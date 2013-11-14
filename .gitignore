@@ -12,3 +12,7 @@ Classes/.gitignore
 Classes/.project
 
 .DS_Store
+
+Classes/bin/.classpath
+
+Classes/bin/.project
