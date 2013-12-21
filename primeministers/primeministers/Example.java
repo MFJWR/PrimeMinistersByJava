@@ -9,7 +9,7 @@ public class Example extends Object
 	public Example(){}
 	
 	/**
-	 * サンプルのメインプログラム。
+	 * 総理大臣のCSVファイルをHTMLページへと変換するメインプログラム。
 	 */
 	public static void main(String[] arguments)
 	{

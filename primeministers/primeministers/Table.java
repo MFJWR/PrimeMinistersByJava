@@ -21,7 +21,7 @@ public class Table extends Object
 	
 	//メソッド//
 	public void add(Tuple aTuple){}
-	public Arttributes attributes(){}
+	public Attributes attributes(){}
 	public void attributes(Attributes instanceOfAttributes){}
 	public java.util.ArrayList<java.awt.image.BufferedImage> images(){}
 	private java.awt.image.BufferedImage picture(java.lang.String aString){}
