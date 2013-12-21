@@ -36,6 +36,7 @@ public class Attributes extends Object
 		int i=0;
 		while(i<10){
 			keys.add(Integer.toString(i));
+			i++;
 		}
 		
 		if (aString.equals("input")) {

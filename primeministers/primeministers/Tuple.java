@@ -1,7 +1,7 @@
 package primeministers;
 
 import java.util.ArrayList;
-import java.lang.String;
+// import java.lang.String;
 
 /**
  * タプル：総理大臣の情報テーブルの中の各々のレコード。
