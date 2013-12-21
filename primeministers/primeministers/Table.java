@@ -1,33 +1,102 @@
 package primeministers;
 
+import java.util.ArrayList;
+import java.awt.image.BufferedImage;
+// import java.lang.String;
+
 /**
  * 表：総理大臣の情報テーブル。
  */
-public class Table extends Object
-{
+public class Table extends Object {
 	/**
 	 * ここを作成してください。
 	 * まず、次のページを参照しながら、スケルトン（スタブ）を作ることから始めましょう。
 	 * http://www.cc.kyoto-su.ac.jp/~atsushi/Programs/CSV2HTML/PrimeMinistersJavaDoc/index.html
 	 */
-	//テーブル//
+
+	/**
+	 * 属性リストを記憶するフィールド。
+	 */
 	private Attributes attributes;
-	private java.util.ArrayList<Tuple> tuples;
-	private java.util.ArrayList<java.awt.image.BufferedImage> images;
-	private java.util.ArrayList<java.awt.image.BufferedImage> thumbnails;
 	
-	//コンストラクタ//
-	public Table(){}
+	/**
+	 * タプル群を記憶するフィールド。
+	 */
+	private ArrayList<Tuple> tuples;
 	
-	//メソッド//
-	public void add(Tuple aTuple){}
-	public Attributes attributes(){}
-	public void attributes(Attributes instanceOfAttributes){}
-	public java.util.ArrayList<java.awt.image.BufferedImage> images(){}
-	private java.awt.image.BufferedImage picture(java.lang.String aString){}
-	public java.util.ArrayList<java.awt.image.BufferedImage> thumbnails(){}
-	public java.lang.String toString(){
-	//Overrides: toString in class java.lang.Object
+	/**
+	 * 画像群を記憶するフィールド。
+	 */
+	private ArrayList<BufferedImage> images;
+	
+	/**
+	 * サムネイル画像群を記憶するフィールド。
+	 */
+	private ArrayList<BufferedImage> thumbnails;
+
+	
+	/*
+	 * テーブルのコンストラクタ
+	 */
+	public Table() {
+	
 	}
-	public java.util.ArrayList<Tuple> tuples(){}
+
+	
+	/**
+	 * タプルを追加する。
+	 */
+	public void add(Tuple aTuple) {
+	
+	}
+	
+	/**
+	 * 属性リストを応答する。
+	 */
+	public Attributes attributes() {
+	
+	}
+	
+	/**
+	 * 属性リストを設定する。
+	 */
+	public void attributes(Attributes instanceOfAttributes) {
+	
+	}
+	
+	/**
+	 * 画像群を応答する。
+	 */
+	public ArrayList<BufferedImage> images() {
+	
+	}
+	
+	/**
+	 * 画像またはサムネイル画像の文字列を受け取って当該画像を応答する。
+	 */
+	private BufferedImage picture(String aString) {
+	
+	}
+	
+	/**
+	 * サムネイル画像群を応答する。
+	 */
+	public ArrayList<BufferedImage> thumbnails() {
+	
+	}
+	
+	/**
+	 * 自分自身を文字列にして、それを応答する。
+	 */
+	public String toString() {
+	//Overrides: toString in class java.lang.Object
+		
+	}
+	
+	/**
+	 * タプル群を応答する。
+	 */
+	public ArrayList<Tuple> tuples() {
+	
+	}
 }
