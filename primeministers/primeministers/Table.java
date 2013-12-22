@@ -20,11 +20,6 @@ public class Table extends Object {
 	private Attributes attributes;
 	
 	/**
-	 * タプル群を記憶するフィールド。
-	 */
-	private ArrayList<Tuple> tuples;
-	
-	/**
 	 * 画像群を記憶するフィールド。
 	 */
 	private ArrayList<BufferedImage> images;
@@ -34,12 +29,21 @@ public class Table extends Object {
 	 */
 	private ArrayList<BufferedImage> thumbnails;
 
+	/**
+	 * タプル群を記憶するフィールド。
+	 */
+	private ArrayList<Tuple> tuples;
 	
-	/*
+
+	/**
 	 * テーブルのコンストラクタ
 	 */
 	public Table() {
-	
+		// attributes = new Attributes();
+		
+		tuples = new ArrayList<Tuple>();
+		
+		
 	}
 
 	
@@ -47,42 +51,48 @@ public class Table extends Object {
 	 * タプルを追加する。
 	 */
 	public void add(Tuple aTuple) {
-	
+		tuples.add(aTuple);
 	}
 	
 	/**
 	 * 属性リストを応答する。
 	 */
 	public Attributes attributes() {
-	
+		return attributes;
 	}
 	
 	/**
 	 * 属性リストを設定する。
 	 */
 	public void attributes(Attributes instanceOfAttributes) {
-	
+		attributes = instanceOfAttributes;
 	}
 	
 	/**
 	 * 画像群を応答する。
 	 */
 	public ArrayList<BufferedImage> images() {
-	
+		return images;
 	}
 	
 	/**
 	 * 画像またはサムネイル画像の文字列を受け取って当該画像を応答する。
 	 */
 	private BufferedImage picture(String aString) {
-	
+		int index = aString.indexOf("/");
+		if (aString.substring(0,index).equals("images")) {
+			return images.get(images.indexOf(aString));
+		}
+		else if (aString.substring(0,index).equals("thumbnails")) {
+			return thumbnails.get(thumbnails.indexOf(aString));
+		}
 	}
 	
 	/**
 	 * サムネイル画像群を応答する。
 	 */
 	public ArrayList<BufferedImage> thumbnails() {
-	
+		return thumbnails;
 	}
 	
 	/**
@@ -90,13 +100,13 @@ public class Table extends Object {
 	 */
 	public String toString() {
 	//Overrides: toString in class java.lang.Object
-		
+		return "";
 	}
 	
 	/**
 	 * タプル群を応答する。
 	 */
 	public ArrayList<Tuple> tuples() {
-	
+		return tuples;
 	}
 }

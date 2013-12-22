@@ -68,11 +68,11 @@ public class Attributes extends Object {
 	 * 指定されたインデックスに対応する名前を応答する。名前が無いときはキーを応答する。
 	 */
 	protected String at(int index) {
-		if(names.get(index) == null) {
+		if (names.get(index) == null) {
 			return keys.get(index);
 		}
 		else {
-		return names.get(index);
+			return names.get(index);
 		}
 	}
 	/**
