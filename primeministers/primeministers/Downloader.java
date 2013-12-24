@@ -1,6 +1,11 @@
 package primeministers;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * ダウンローダ：総理大臣のCSVファイル・画像ファイル・サムネイル画像ファイルをダウンロードする。
@@ -22,32 +27,88 @@ public class Downloader extends IO {
 
 	// メソッド//
 	public void downloadCSV() {
+		File aCSVFile = new File(System.getProperty("user.home")
+				+ "/Desktop/SouriDaijin/PrimeMinisters.csv");
+		if (aCSVFile.exists())
+			aCSVFile.delete();
+		InputStream aStream = null;
+		FileOutputStream anOutputStream = null;
 
+		try {
+			URL aUrl = new URL(Downloader.urlStringOfCSV());
+			aStream = aUrl.openConnection().getInputStream();
+			anOutputStream = new FileOutputStream(aCSVFile);
+			byte[] bytes = new byte[512];
+			int number;
+			while (true) {
+				if ((number = aStream.read(bytes)) == -1)
+					break;
+				anOutputStream.write(bytes, 0, number);
+			}
+
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				anOutputStream.close();
+				aStream.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public void downloadImages() {
 		this.url = "images/";
-		File aImageDirectory = new File("/Desktop/SouriDaijin/" + this.url);
-		if (aImageDirectory.exists())
-			aImageDirectory.delete();
-		aImageDirectory.mkdir();
+		for (int i = 39; i < 63; i++) {
+			this.downloadPictures(i);
+		}
+	}
+
+	public void downloaadThumbnails() {
+		this.url = "thumbnails/";
 		for (int i = 39; i < 63; i++) {
 			this.downloadPictures(i);
 		}
 	}
 
 	private void downloadPictures(int indexOfPicture) {
+		String aFileName = this.url + "0" + indexOfPicture + ".jpg";
+		File aPicture = new File(System.getProperty("user.home")
+				+ "/Desktop/SouriDaijin/" + aFileName);
 
-	}
+		InputStream aStream = null;
+		FileOutputStream anOutputStream = null;
 
-	public void downloaadThumbnails() {
-		this.url = "thumbnails/";
-		File aThumbnailDirectory = new File("/Desktop/SouriDaijin/" + this.url);
-		if (aThumbnailDirectory.exists())
-			aThumbnailDirectory.delete();
-		aThumbnailDirectory.mkdir();
-		for (int i = 39; i < 63; i++) {
-			this.downloadPictures(i);
+		try {
+			URL aUrl = new URL(Downloader.urlString() + aFileName);
+			aStream = aUrl.openConnection().getInputStream();
+			anOutputStream = new FileOutputStream(aPicture);
+			byte[] bytes = new byte[512];
+			int number;
+			while (true) {
+				if ((number = aStream.read(bytes)) == -1)
+					break;
+				anOutputStream.write(bytes, 0, number);
+			}
+
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				anOutputStream.close();
+				aStream.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 
