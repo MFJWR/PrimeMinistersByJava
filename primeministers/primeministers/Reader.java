@@ -12,15 +12,37 @@ public class Reader extends IO
 	 */
 	
 	//テーブル//
+	/**
+	 * 総理大臣の情報を記したCSVファイルを記憶するフィールド。
+	 */
 	private java.io.File filename;
 	
 	//コンストラクタ//
+	/**
+	 * リーダのコンストラクタ
+	 */
 	public Reader(){}
 	
 	//メソッド//
-	public static java.io.File filenameOfCSV(){}
-	public java.io.File filename(){}
+	/**
+	 * ダウンロードしたCSVファイルのローカルなファイルを応答するクラスメソッド。
+	 */
+	public static java.io.File filenameOfCSV(){
+		
+	}
+	
+	/**
+	 * ダウンロードしたCSVファイルを応答する。
+	 */
+	public java.io.File filename(){
+		
+	}
+	
+	/**
+	 * ダウンロードしたCSVファイルを読み込んでテーブルを応答する。
+	 */
 	public Table table(){
 	//Overrides: table in class IO
+		
 	}
 }
