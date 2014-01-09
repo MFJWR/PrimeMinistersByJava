@@ -9,6 +9,7 @@ public class Writer extends IO {
 	 * http://www.cc.kyoto-
 	 * su.ac.jp/~atsushi/Programs/CSV2HTML/PrimeMinistersJavaDoc/index.html
 	 */
+	private Table aTable;
 
 	/**
 	 * ライタのコンストラクタ

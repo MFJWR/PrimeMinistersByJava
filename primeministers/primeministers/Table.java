@@ -1,7 +1,6 @@
 package primeministers;
 
 import java.awt.image.BufferedImage;
-
 // import java.lang.String;
 import java.util.ArrayList;
 
@@ -39,17 +38,16 @@ public class Table extends Object {
 	 * テーブルのコンストラクタ
 	 */
 	public Table() {
-		// attributes = new Attributes();
-
 		tuples = new ArrayList<Tuple>();
-
+		images = new ArrayList<BufferedImage>();
+		thumbnails = new ArrayList<BufferedImage>();
 	}
 
 	/**
 	 * タプルを追加する。
 	 */
 	public void add(Tuple aTuple) {
-		tuples.add(aTuple);
+		this.tuples.add(aTuple);
 	}
 
 	/**
@@ -76,13 +74,16 @@ public class Table extends Object {
 	/**
 	 * 画像またはサムネイル画像の文字列を受け取って当該画像を応答する。
 	 */
-	/*
-	 * private BufferedImage picture(String aString) { int index =
-	 * aString.indexOf("/"); if (aString.substring(0,index).equals("images")) {
-	 * return images.get(images.indexOf(aString)); } else if
-	 * (aString.substring(0,index).equals("thumbnails")) { return
-	 * thumbnails.get(thumbnails.indexOf(aString)); } }
-	 */
+
+	private BufferedImage picture(String aString) {
+		int index = aString.indexOf("/");
+		if (aString.substring(0, index).equals("images"))
+			return images.get(images.indexOf(aString));
+		else if (aString.substring(0, index).equals("thumbnails"))
+			return thumbnails.get(thumbnails.indexOf(aString));
+		else
+			return null;
+	}
 
 	/**
 	 * サムネイル画像群を応答する。
@@ -95,8 +96,11 @@ public class Table extends Object {
 	 * 自分自身を文字列にして、それを応答する。
 	 */
 	public String toString() {
-		// Overrides: toString in class java.lang.Object
-		return "";
+		String aString = "";
+		for (Tuple aTuple : this.tuples) {
+			aString = aString + aTuple + "\n";
+		}
+		return aString;
 	}
 
 	/**

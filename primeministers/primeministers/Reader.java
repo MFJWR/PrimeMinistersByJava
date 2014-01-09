@@ -34,10 +34,23 @@ public class Reader extends IO {
 	/**
 	 * ダウンロードしたCSVファイルを応答する。
 	 */
-	// public File filename() {}
+	public File filename() {
+		return this.filename;
+	}
 
 	/**
 	 * ダウンロードしたCSVファイルを読み込んでテーブルを応答する。
 	 */
-	// public Table table() {// Overrides: table in class IO}
+	public Table table() {
+		this.filename = new File(System.getProperty("user.home")
+				+ "/Desktop/SouriDaijin/PrimeMinisters.csv");
+		Table inputTable = new Table();
+		Attributes anAttributes = new Attributes("input");
+		inputTable.attributes(anAttributes);
+		for (String row : super.readTextFromFile(this.filename)) {
+			Tuple aTuple = new Tuple(anAttributes, super.splitString(row, ","));
+			inputTable.add(aTuple);
+		}
+		return inputTable;
+	}
 }

@@ -118,7 +118,7 @@ public class Downloader extends IO {
 		this.downloadCSV();
 		this.downloadImages();
 		this.downloaadThumbnails();
-		return super.table(); // ?
+		return new Reader().table();
 	}
 
 	public String url() {
